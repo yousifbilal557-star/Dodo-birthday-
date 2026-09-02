@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>إلى دودو ❤️</title>
+<meta name="theme-color" content="#100b12">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#0b080d;color:#f8eef4;font-family:Tahoma,Arial,sans-serif;line-height:1.9}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background:
+radial-gradient(circle at 20% 10%,rgba(184,67,112,.16),transparent 28%),
+radial-gradient(circle at 80% 80%,rgba(121,55,95,.13),transparent 30%);z-index:-1}
+.container{width:min(920px,92%);margin:auto}
+.hero{min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px 0}
+.hero-card{padding:42px 24px;border:1px solid rgba(255,255,255,.13);border-radius:34px;background:rgba(255,255,255,.045);backdrop-filter:blur(15px);box-shadow:0 25px 80px rgba(0,0,0,.45)}
+.kicker{letter-spacing:5px;color:#dba8bd;font-size:12px}
+h1{font-size:clamp(42px,12vw,86px);margin:10px 0 0;font-family:Georgia,serif;font-weight:500}
+.subtitle{color:#d7c5ce;font-size:16px}
+.heart{font-size:34px;animation:pulse 1.8s infinite}
+@keyframes pulse{50%{transform:scale(1.15)}}
+.scroll{display:inline-block;margin-top:28px;color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.18);padding:10px 20px;border-radius:999px}
+section{padding:80px 0}
+.section-title{font-family:Georgia,serif;font-size:34px;margin:0 0 12px}
+.section-note{color:#bfaeb7;margin-bottom:30px}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.photo{position:relative;border-radius:24px;overflow:hidden;background:#151017;border:1px solid rgba(255,255,255,.1);cursor:pointer;box-shadow:0 15px 35px rgba(0,0,0,.25)}
+.photo img{width:100%;height:390px;object-fit:cover;display:block;transition:.5s}
+.photo:hover img{transform:scale(1.035)}
+.photo span{position:absolute;bottom:12px;right:12px;background:rgba(10,7,10,.65);padding:5px 12px;border-radius:999px;font-size:12px}
+.music{text-align:center;padding:34px;border-radius:28px;background:linear-gradient(135deg,rgba(154,57,97,.22),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.12)}
+.music-btn,.surprise-btn{display:inline-block;border:0;background:#f3d9e4;color:#1a0d14;padding:13px 22px;border-radius:999px;font-weight:bold;text-decoration:none;cursor:pointer;margin-top:12px}
+.music small{display:block;color:#cbb8c2;margin-top:10px}
+.letter{background:#f8f0e8;color:#291c21;border-radius:28px;padding:34px 25px;box-shadow:0 25px 70px rgba(0,0,0,.28)}
+.letter .time{font-family:Georgia,serif;text-align:center;font-size:28px;color:#8f3e5d;margin-bottom:20px}
+.message{font-size:16px;line-height:2.15;white-space:normal}
+.surprises{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.surprise-btn{width:100%;min-height:90px;background:rgba(255,255,255,.06);color:#fff;border:1px solid rgba(255,255,255,.12);font-weight:normal}
+.surprise-btn:hover{background:rgba(190,80,125,.18)}
+footer{padding:70px 0 90px;text-align:center;color:#bcaab4}
+.big-love{font-family:Georgia,serif;font-size:clamp(30px,7vw,54px);margin:15px 0}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.75);display:none;align-items:center;justify-content:center;padding:20px;z-index:10}
+.modal.open{display:flex}
+.modal-box{width:min(560px,100%);background:#171017;border:1px solid rgba(255,255,255,.15);border-radius:28px;padding:28px;text-align:center}
+.close{float:left;border:0;background:none;color:#aaa;font-size:25px;cursor:pointer}
+.modal-box img{width:100%;max-height:65vh;object-fit:contain;border-radius:18px}
+@media(max-width:650px){
+.gallery{grid-template-columns:1fr}
+.photo img{height:430px}
+.surprises{grid-template-columns:1fr}
+section{padding:60px 0}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+<div class="container">
+<div class="hero-card">
+<div class="kicker">A LITTLE PLACE MADE ONLY FOR YOU</div>
+<h1>دودو ❤️</h1>
+<p class="subtitle">إلى أجمل إنسانة دخلت حياتي…</p>
+<div class="heart">♥</div>
+<p class="subtitle">هذه مو مجرد صفحة… هاي قطعة صغيرة من قلبي.</p>
+<a class="scroll" href="#memories">ابدئي المفاجأة ↓</a>
+</div>
+</div>
+</header>
+
+<main class="container">
+<section id="memories">
+<h2 class="section-title">ذكرياتنا</h2>
+<p class="section-note">أربع صور… بس ورا كل صورة حكاية ما تنعاد.</p>
+<div class="gallery">
+<div class="photo" onclick="openPhoto('images/memory1.jpeg','من اللحظات اللي أحب أرجعلها كل مرة ❤️')"><img src="images/memory1.jpeg"><span>ذكرى 01</span></div>
+<div class="photo" onclick="openPhoto('images/memory2.jpeg','يوم من الأيام اللي صار بيها كلشي أجمل.')"><img src="images/memory2.jpeg"><span>ذكرى 02</span></div>
+<div class="photo" onclick="openPhoto('images/memory3.jpeg','دودو… وبس. 🤍')"><img src="images/memory3.jpeg"><span>ذكرى 03</span></div>
+<div class="photo" onclick="openPhoto('images/memory4.jpeg','وأتمنى هالضحكة تبقى بحياتي للأبد.')"><img src="images/memory4.jpeg"><span>ذكرى 04</span></div>
+</div>
+</section>
+
+<section>
+<div class="music">
+<div style="font-size:38px">🎵</div>
+<h2 class="section-title">أغنيتنا</h2>
+<p>ثورة حب — هشام</p>
+<a class="music-btn" href="https://www.youtube.com/watch?v=GN724-kgDvc" target="_blank" rel="noopener">▶ شغّلي الأغنية</a>
+<small>تفتح الأغنية من YouTube حتى تشتغل بشكل مضمون على الموبايل.</small>
+</div>
+</section>
+
+<section>
+<h2 class="section-title">رسالة من قلبي</h2>
+<p class="section-note">اقريها بهدوء… لأن كل كلمة بيها مكتوبة إلكِ.</p>
+<div class="letter">
+<div class="time">7:07</div>
+<div class="message">7:07 .. كل عام وانتِ بألف خير حبيبة روحي<br>كل عام وانتِ حبيبتي<br>كل عام وانتِ نور عيني<br>كل عام وانتِ فلذة كبدي وامي وحياتي ودنيتي وكل ما املك<br><br>يارب سنة سعيدة عليج وسنة نجاح وافرح بنجاحج من المرحلة يا اعظم دكتورة بالدنيا.<br><br>كل عام وانتِ الخير يحلم عمري وروحي ويا واقعي الحلو ويا عوضي واملي بهل دنيا.<br>كل عام وانتِ الخير يا وطن روحي واماني.<br><br>انتِ احب الشهر كلة من بدايتة لنهايتة بس لان انتِ اجيتي بي وكمت احبة اكثر اضعاف فقط لان رجعتيلي بي.<br>من يوم دزيتيلي المسج لهل يوم كل حياتي تغيرت، صارت حلوة سعيدة كلها فرح وطمأنينة.<br><br>يا اعظم انثى بهل دنيا، مستحيل شكد حبابة وهيج العلاقة وياج صدك مريحة.<br>صدك امي وحبيبتي وبنتي وكلشي، مو بس حجي.<br>لو احجي منا لالف سنة ميوفي نقطة بمجرة من جمال كلشي بيج.<br><br>شكراً لان دتنطيني كل هل مشاعر، والسنة كلها مرات تدوسين على نفسج من نوم ودراسة وكلشي لخاطر تبقين يمي.<br>ماعرف شلون اجازيج واشكرج على هل سوالف الحلوة يا كل احلامي.<br><br>انتِ من اني وصغير لحدما اموت، انتِ كل احلامييي.<br>وماحب اكلج اني يمج طول هل سنة وطول السنوات الجاية.<br>ووعد لحظة وحدة لا اتغير ولا يخف اي حب او مشاعر.<br>وعد لحظة وحدة ما اهد ايدج.<br><br>وعد اني يمج، وانتِ الس هاي بديهيات، لان اني عايش عليج وعلى حُبج.<br>حياتي بدونج لاشيء حرفياً واني كلي لا شيء.<br><br>يارب مانحرم منج ولا من حسج اللي مسوي لحياتي قيمة.<br>يارب مانحرم من ضحكتج وعيونج وريحتج الطيبة وملامحج الحلوة ولمسة ايدج وسمارج.<br>ربي يحفظج الي يارب.<br><br>شكراً على الراحة اللي دتنطيها الي بهل دنيا.<br>طول عمري مجنت متخيل انام نومات بهل راحة وبالي صافي وماعدي هَم ولا عدي ضوجة.<br>كلشي بية صار احسن واحلى من وراج.<br><br>خليج يمي لتعوفيني ابد، لتعوفيني لحظة وحدة، لان ماكدر بدونج والله.<br>ولان احبج هواي، وهل حُب اللي شايلة الج بس انتِ تستاهلي.<br><br>خليج يمي للابد مثلما وعد.<br>ماروح لحظة وحدة عنج، وباقيلج لابد الابدين.<br>احبج كلش هواي واعشقج.<br><br>خليج يمي.<br>خليج اموت عليج دودو.<br>ربي يحفظج الييي.<br>احبج هواي.</div>
+</div>
+</section>
+
+<section>
+<h2 class="section-title">ثلاث مفاجآت 🎁</h2>
+<p class="section-note">لا تفتحيهم كلهم بسرعة… خلي كل وحدة إلها لحظتها.</p>
+<div class="surprises">
+<button class="surprise-btn" onclick="openText('أول مفاجأة ❤️','أكثر شي أحبه بيج؟ مو شي واحد. أحب إحساس الأمان اللي يجيني من وجودج. أحب إنج صرتِ جزء من يومي ومن دعائي ومن كل خططي الجاية.')">افتحي الأولى</button>
+<button class="surprise-btn" onclick="openText('شي ما گلتلچ ياه 🤍','مرات أحاول أوصف شكد وجودج غيّر حياتي، وبكل مرة أحس الكلام أصغر من الشعور. فخليها بسيطة: أنا ممتن لأنج رجعتي لحياتي.')">افتحي الثانية</button>
+<button class="surprise-btn" onclick="openText('آخر مفاجأة… 👀','إذا وصلتي لهنا، عندي وعد واحد: مهما كبرت الأيام وتغيّرت التفاصيل، أبقى أختار وجودج بحياتي. عيد ميلاد سعيد يا دودو ❤️')">افتحي الأخيرة</button>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="big-love">كل عام وانتِ حبيبتي ❤️</div>
+<p>من شخص يحبج هواي… أكثر مما تكدر الكلمات تشرح.</p>
+<p>— إلى دودو، بكل الحب.</p>
+</footer>
+
+<div class="modal" id="modal" onclick="if(event.target===this)closeModal()">
+<div class="modal-box">
+<button class="close" onclick="closeModal()">×</button>
+<div id="modalContent"></div>
+</div>
+</div>
+
+<script>
+function showModal(content) {
+  document.getElementById('modalContent').innerHTML = content;
+  document.getElementById('modal').classList.add('open');
+}
+function closeModal() {
+  document.getElementById('modal').classList.remove('open');
+}
+function openText(title,text) {
+  showModal('<h2>'+title+'</h2><p style="line-height:2;font-size:17px">'+text+'</p>');
+}
+function openPhoto(src,caption) {
+  showModal('<img src="'+src+'"><p>'+caption+'</p>');
+}
+</script>
+</body>
+</html>
