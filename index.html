@@ -29,15 +29,27 @@ section{padding:80px 0}
 .photo img{width:100%;height:390px;object-fit:cover;display:block;transition:.5s}
 .photo:hover img{transform:scale(1.035)}
 .photo span{position:absolute;bottom:12px;right:12px;background:rgba(10,7,10,.65);padding:5px 12px;border-radius:999px;font-size:12px}
+.music{text-align:center;padding:34px;border-radius:28px;background:linear-gradient(135deg,rgba(154,57,97,.22),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.12)}
+.music-btn,.surprise-btn{display:inline-block;border:0;background:#f3d9e4;color:#1a0d14;padding:13px 22px;border-radius:999px;font-weight:bold;text-decoration:none;cursor:pointer;margin-top:12px}
+.music small{display:block;color:#cbb8c2;margin-top:10px}
+.letter{background:#f8f0e8;color:#291c21;border-radius:28px;padding:34px 25px;box-shadow:0 25px 70px rgba(0,0,0,.28)}
+.letter .time{font-family:Georgia,serif;text-align:center;font-size:28px;color:#8f3e5d;margin-bottom:20px}
+.message{font-size:16px;line-height:2.15;white-space:normal}
+.surprises{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.surprise-btn{width:100%;min-height:90px;background:rgba(255,255,255,.06);color:#fff;border:1px solid rgba(255,255,255,.12);font-weight:normal}
+.surprise-btn:hover{background:rgba(190,80,125,.18)}
+footer{padding:70px 0 90px;text-align:center;color:#bcaab4}
+.big-love{font-family:Georgia,serif;font-size:clamp(30px,7vw,54px);margin:15px 0}
 .modal{position:fixed;inset:0;background:rgba(0,0,0,.8);display:none;align-items:center;justify-content:center;padding:20px;z-index:100}
 .modal.open{display:flex}
-.modal-box{width:min(560px,100%);background:#171017;border:1px solid rgba(255,255,255,.15);border-radius:28px;padding:24px;text-align:center;position:relative}
+.modal-box{width:min(560px,100%);background:#171017;border:1px solid rgba(255,255,255,.15);border-radius:28px;padding:28px;text-align:center;position:relative}
 .close{position:absolute;top:15px;left:20px;border:0;background:none;color:#fff;font-size:25px;cursor:pointer}
 .modal-box img{width:100%;max-height:55vh;object-fit:contain;border-radius:18px;margin-bottom:15px}
 .modal-caption{color:#f8eef4;font-size:16px;margin-top:10px}
 @media(max-width:650px){
 .gallery{grid-template-columns:1fr}
 .photo img{height:430px}
+.surprises{grid-template-columns:1fr}
 section{padding:60px 0}
 }
 </style>
@@ -59,74 +71,15 @@ section{padding:60px 0}
 
 <main class="container">
 <section id="memories">
-    <h2 class="section-title">ذكرياتنا</h2>
-    <p class="section-note">أربع صور… بس ورا كل صورة حكاية ما تنعاد.</p>
-    <div class="gallery">
-        <div class="photo">
-            <img src="memory1.jpeg" alt="ذكرى 01">
-            <span>رجعلها كل مرة...</span>
-        </div>
-        
-        <div class="photo">
-            <img src="memory2.jpeg" alt="ذكرى 02">
-            <span>بيها كلشي أجمل...</span>
-        </div>
-        
-        <div class="photo">
-            <img src="memory3.jpeg" alt="ذكرى 03">
-            <span>دودو... وبس 🤍</span>
-        </div>
-        
-        <div class="photo">
-            <img src="memory4.jpeg" alt="ذكرى 04">
-            <span>بحياتي للأبد...</span>
-        </div>
-    </div>
-</section>
-</main>
-
-<!-- نافذة عرض الصورة الكبيرة والنص -->
-<div class="modal" id="imageModal">
-    <div class="modal-box">
-        <button class="close" id="closeModal">&times;</button>
-        <img id="modalImg" src="" alt="">
-        <p class="modal-caption" id="modalText"></p>
-    </div>
+<h2 class="section-title">ذكرياتنا</h2>
+<p class="section-note">أربع صور… بس ورا كل صورة حكاية ما تنعاد.</p>
+<div class="gallery">
+<div class="photo" onclick="openPhoto('memory1.jpeg','من اللحظات اللي أحب أرجعلها كل مرة ❤️')"><img src="memory1.jpeg" alt="ذكرى 01"><span>ذكرى 01</span></div>
+<div class="photo" onclick="openPhoto('memory2.jpeg','يوم من الأيام اللي صار بيها كلشي أجمل.')"><img src="memory2.jpeg" alt="ذكرى 02"><span>ذكرى 02</span></div>
+<div class="photo" onclick="openPhoto('memory3.jpeg','دودو… وبس. 🤍')"><img src="memory3.jpeg" alt="ذكرى 03"></div>
+<div class="photo" onclick="openPhoto('memory4.jpeg','وأتمنى هالضحكة تبقى بحياتي للأبد.')"><img src="memory4.jpeg" alt="ذكرى 04"><span>ذكرى 04</span></div>
 </div>
-
-<script>
-const photos = document.querySelectorAll('.photo');
-const modal = document.getElementById('imageModal');
-const modalImg = document.getElementById('modalImg');
-const modalText = document.getElementById('modalText');
-const closeModal = document.getElementById('closeModal');
-
-photos.forEach(photo => {
-    photo.addEventListener('click', () => {
-        const img = photo.querySelector('img');
-        const span = photo.querySelector('span');
-        
-        modalImg.src = img.src;
-        modalText.textContent = span.textContent;
-        modal.classList.add('open');
-    });
-});
-
-closeModal.addEventListener('click', () => {
-    modal.classList.remove('open');
-});
-
-modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-        modal.classList.remove('open');
-    }
-});
-</script>
-
-</body>
-</html>
-
-
+</section>
 
 <section>
 <div class="music">
@@ -143,7 +96,7 @@ modal.addEventListener('click', (e) => {
 <p class="section-note">اقريها بهدوء… لأن كل كلمة بيها مكتوبة إلكِ.</p>
 <div class="letter">
 <div class="time">7:07</div>
-<div class="message">7:07 .. كل عام وانتِ بألف خير حبيبة روحي<br>كل عام وانتِ حبيبتي<br>كل عام وانتِ نور عيني<br>كل عام وانتِ فلذة كبدي وامي وحياتي ودنيتي وكل ما املك<br><br>يارب سنة سعيدة عليج وسنة نجاح وافرح بنجاحج من المرحلة يا اعظم دكتورة بالدنيا.<br><br>كل عام وانتِ الخير يحلم عمري وروحي ويا واقعي الحلو ويا عوضي واملي بهل دنيا.<br>كل عام وانتِ الخير يا وطن روحي واماني.<br><br>انتِ احب الشهر كلة من بدايتة لنهايتة بس لان انتِ اجيتي بي وكمت احبة اكثر اضعاف فقط لان رجعتيلي بي.<br>من يوم دزيتيلي المسج لهل يوم كل حياتي تغيرت، صارت حلوة سعيدة كلها فرح وطمأنينة.<br><br>يا اعظم انثى بهل دنيا، مستحيل شكد حبابة وهيج العلاقة وياج صدك مريحة.<br>صدك امي وحبيبتي وبنتي وكلشي، مو بس حجي.<br>لو احجي منا لالف سنة ميوفي نقطة بمجرة من جمال كلشي بيج.<br><br>شكراً لان دتنطيني كل هل مشاعر، والسنة كلها مرات تدوسين على نفسج من نوم ودراسة وكلشي لخاطر تبقين يمي.<br>ماعرف شلون اجازيج واشكرج على هل سوالف الحلوة يا كل احلامي.<br><br>انتِ من اني وصغير لحدما اموت، انتِ كل احلامييي.<br>وماحب اكلج اني يمج طول هل سنة وطول السنوات الجاية.<br>ووعد لحظة وحدة لا اتغير ولا يخف اي حب او مشاعر.<br>وعد لحظة وحدة ما اهد ايدج.<br><br>وعد اني يمج، وانتِ الس هاي بديهيات، لان اني عايش عليج وعلى حُبج.<br>حياتي بدونج لاشيء حرفياً واني كلي لا شيء.<br><br>يارب مانحرم منج ولا من حسج اللي مسوي لحياتي قيمة.<br>يارب مانحرم من ضحكتج وعيونج وريحتج الطيبة وملامحج الحلوة ولمسة ايدج وسمارج.<br>ربي يحفظج الي يارب.<br><br>شكراً على الراحة اللي دتنطيها الي بهل دنيا.<br>طول عمري مجنت متخيل انام نومات بهل راحة وبالي صافي وماعدي هَم ولا عدي ضوجة.<br>كلشي بية صار احسن واحلى من وراج.<br><br>خليج يمي لتعوفيني ابد، لتعوفيني لحظة وحدة، لان ماكدر بدونج والله.<br>ولان احبج هواي، وهل حُب اللي شايلة الج بس انتِ تستاهلي.<br><br>خليج يمي للابد مثلما وعد.<br>ماروح لحظة وحدة عنج، وباقيلج لابد الابدين.<br>احبج كلش هواي واعشقج.<br><br>خليج يمي.<br>خليج اموت عليج دودو.<br>ربي يحفظج الييي.<br>احبج هواي.</div>
+<div class="message">7:07 .. كل عام وانتِ بألف خير حبيبة روحي<br>كل عام وانتِ حبيبتي<br>كل عام وانتِ نور عيني<br>كل عام وانتِ فلذة كبدي وامي وحياتي ودنيتي وكل ما املك<br><br>يارب سنة سعيدة عليج وسنة نجاح وافرح بنجاحج من المرحلة يا اعظم دكتورة بالدنيا.<br><br>كل عام وانتِ الخير يحلم عمري وروحي ويا واقعي الحلو ويا عوضي واملي بهل دنيا.<br>كل عام وانتِ الخير يا وطن روحي واماني.<br><br>انتِ احب الشهر كلة من بدايتة لنهايتة بس لان انتِ اجيتي بي وكمت احبة اكثر اضعاف فقط لان رجعتيلي بي.<br>من يوم دزيتيلي المسج لهل يوم كل حياتي تغيرت، صارت حلوة سعيدة كلها فرح وطمأنينة.<br><br>يا اعظم انثى بهل دنيا، مستحيل شكد حبابة وهيج العلاقة وياج صدك مريحة.<br>صدك امي وحبيبتي وبنتي وكلشي، مو بس حجي.<br>لو احجي منا لالف سنة ميوفي نقطة بمجرة من جمال كلشي بيج.<br><br>شكراً لان دتنطيني كل هل مشاعر، والسنة كلها مرات تدوسين على نفسج من نوم ودراسة وكلشي لخاطر تبقين يمي.<br>ماعرف شلون اجازيج واشكرج على هل سوالف الحلوة يا كل احلامي.<br><br>انتِ من اني وصغير لحدما اموت، انتِ كل احلامييي.<br>وماحب اكلج اني يمج طول هل سنة وطول السنوات الجاية.<br>ووعد لحظة وحدة لا اتغير ولا يخف اي حب أو مشاعر.<br>وعد لحظة وحدة ما أهد ايدج.<br><br>وعد اني يمج، وانتِ الس هاي بديهيات، لان اني عايش عليج وعلى حُبج.<br>حياتي بدونج لاشيء حرفياً واني كلي لا شيء.<br><br>يارب مانحرم منج ولا من حسج اللي مسوي لحياتي قيمة.<br>يارب مانحرم من ضحكتج وعيونج وريحتج الطيبة وملامحج الحلوة ولمسة ايدج وسمارج.<br>ربي يحفظج الي يارب.<br><br>شكراً على الراحة اللي دتنطيها الي بهل دنيا.<br>طول عمري مجنت متخيل انام نومات بهل راحة وبالي صافي وماعدي هَم ولا عدي ضوجة.<br>كلشي بية صار احسن واحلى من وراج.<br><br>خليج يمي لتعوفيني ابد، لتعوفيني لحظة وحدة، لان ماكدر بدونج والله.<br>ولان احبج هواي، وهل حُب اللي شايلة الج بس انتِ تستاهلي.<br><br>خليج يمي للابد مثلما وعد.<br>ماروح لحظة وحدة عنج، وباقيلج لابد الابدين.<br>احبج كلش هواي واعشقج.<br><br>خليج يمي.<br>خليج اموت عليج دودو.<br>ربي يحفظج الييي.<br>احبج هواي.</div>
 </div>
 </section>
 
@@ -164,27 +117,43 @@ modal.addEventListener('click', (e) => {
 <p>— إلى دودو، بكل الحب.</p>
 </footer>
 
-<div class="modal" id="modal" onclick="if(event.target===this)closeModal()">
+<div class="modal" id="imageModal">
 <div class="modal-box">
-<button class="close" onclick="closeModal()">×</button>
-<div id="modalContent"></div>
+<button class="close" id="closeModal">&times;</button>
+<img id="modalImg" src="" alt="">
+<p class="modal-caption" id="modalText"></p>
 </div>
 </div>
 
 <script>
-function showModal(content) {
-  document.getElementById('modalContent').innerHTML = content;
-  document.getElementById('modal').classList.add('open');
+const modal = document.getElementById('imageModal');
+const modalImg = document.getElementById('modalImg');
+const modalText = document.getElementById('modalText');
+const closeModal = document.getElementById('closeModal');
+
+function openPhoto(src, caption) {
+    modalImg.style.display = 'block';
+    modalImg.src = src;
+    modalText.textContent = caption;
+    modal.classList.add('open');
 }
-function closeModal() {
-  document.getElementById('modal').classList.remove('open');
+
+function openText(title, text) {
+    modalImg.style.display = 'none';
+    modalText.innerHTML = '<strong>' + title + '</strong><br><br>' + text;
+    modal.classList.add('open');
 }
-function openText(title,text) {
-  showModal('<h2>'+title+'</h2><p style="line-height:2;font-size:17px">'+text+'</p>');
-}
-function openPhoto(src,caption) {
-  showModal('<img src="'+src+'"><p>'+caption+'</p>');
-}
+
+closeModal.addEventListener('click', () => {
+    modal.classList.remove('open');
+});
+
+modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        modal.classList.remove('open');
+    }
+});
 </script>
+
 </body>
 </html>
